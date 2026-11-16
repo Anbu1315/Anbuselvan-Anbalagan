@@ -18,12 +18,12 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--tape);outline-offset:3px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 section{padding:56px 0 8px}
-h2{font-size:clamp(34px,6vw,48px);margin-bottom:24px}
+h2{font-size:clamp(34px,6vw,48px);margin-bottom:24px;display:flex;align-items:center;gap:14px}
 
 nav{position:sticky;top:0;z-index:5;background:rgba(242,244,241,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px}
 .logo{background:var(--tape);color:var(--ink);font:700 22px "Barlow Condensed",sans-serif;padding:2px 9px;border-radius:4px;text-decoration:none}
-nav ul{display:flex;gap:16px;list-style:none;padding:0;font-size:15px;font-weight:500}
+nav ul{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:2px 14px;list-style:none;padding:0;font-size:15px;font-weight:500}
 nav ul a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
 nav ul a:hover{border-color:var(--tape)}
 
@@ -96,6 +96,33 @@ nav ul a:hover{border-color:var(--tape)}
 .cl .btn.main{background:var(--tape);border-color:var(--tape);color:var(--ink)}
 footer{margin-top:34px;font-size:14px;color:#8b9aa8}
 
+.ico{width:52px;height:52px;flex:none;overflow:visible;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ico .t{fill:var(--tape)}
+.g{transform-box:fill-box;transform-origin:50% 100%;animation:grow 2.8s ease-in-out infinite}.g2{animation-delay:.25s}.g3{animation-delay:.5s}
+.pf{fill:currentColor;stroke:none;opacity:0;transform-box:fill-box;transform-origin:center;animation:puff 2.8s ease-out infinite}.pf2{animation-delay:1.4s}
+.bob{animation:bob 2.2s ease-in-out infinite}.bob2{animation:bob 2.2s .5s ease-in-out infinite}.bob3{animation:bob 2.2s 1s ease-in-out infinite}
+.sp{animation:spin 7s linear infinite}.sp2{animation:spin 7s linear infinite reverse}
+.glow{animation:glow 2s ease-in-out infinite}
+.tw{transform-box:fill-box;transform-origin:center;animation:tw 2s ease-in-out infinite}.tw2{animation-delay:1s}
+.dr{stroke-dasharray:22;animation:dr 3s ease-in-out infinite}
+.ltr{animation:post 2.4s ease-in-out infinite}
+@keyframes grow{0%{transform:scaleY(.2)}45%,80%{transform:scaleY(1)}100%{transform:scaleY(.2)}}
+@keyframes puff{0%{transform:translateY(0) scale(.5);opacity:0}30%{opacity:.5}100%{transform:translateY(-16px) scale(1.3);opacity:0}}
+@keyframes bob{50%{transform:translateY(-3px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes glow{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes tw{0%,100%{transform:scale(.4);opacity:.3}50%{transform:scale(1);opacity:1}}
+@keyframes dr{0%{stroke-dashoffset:22}40%,100%{stroke-dashoffset:0}}
+@keyframes post{50%{transform:translateY(-6px)}}
+.ab{max-width:62ch;margin-bottom:12px}.mu{color:var(--mute)}.stats{margin-top:26px}
+.sg p{color:var(--mute)}
+.pl{list-style:none;padding:0;max-width:760px}
+.pl li{padding:18px 0;border-bottom:1px solid var(--line)}.pl li:last-child{border:0}
+.pl h3{font-size:28px;margin:6px 0 4px}.pl p{color:var(--mute)}
+.st{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:4px;background:var(--tape);color:var(--ink)}
+.st.run{background:var(--steel);color:#fff}.st.plan{background:transparent;border:1.5px dashed var(--mute);color:var(--mute)}
+.ach{max-width:64ch;padding-left:20px}.ach li{margin-bottom:8px}
+.cred p{margin-bottom:14px}.fine{margin-top:18px;font-size:14px;color:var(--mute);max-width:64ch}
 @media(min-width:780px){
 .hero{grid-template-columns:1fr auto;gap:48px}
 .ring{width:240px}
@@ -109,7 +136,7 @@ html.js .rv.in{opacity:1;transform:none}
 <body>
 <nav><div class="wrap">
 <a class="logo" href="#top" aria-label="Back to top">AA</a>
-<ul><li><a href="#impact">Impact</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
 </div></nav>
 
 <main id="top">
@@ -138,27 +165,31 @@ html.js .rv.in{opacity:1;transform:none}
 </div>
 </div>
 
-<section id="impact"><div class="wrap">
-<h2 class="rv">Track record</h2>
+<section id="about"><div class="wrap">
+<h2 class="rv"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 43h38"/><rect class="g t" x="9" y="27" width="8" height="16" rx="1.5"/><rect class="g g2 t" x="20" y="17" width="8" height="26" rx="1.5"/><rect class="g g3 t" x="31" y="6" width="8" height="37" rx="1.5"/></svg>About me</h2>
+<p class="ab rv">A manufacturing professional with hands-on experience in production supervision, shift execution, team coordination, process troubleshooting and food safety practices. Currently in chocolate manufacturing in Dubai, with earlier experience in biscuit production and pharmaceutical packaging equipment.</p>
+<p class="ab mu rv">Career objective: contribute to a progressive food or FMCG manufacturing operation in a production leadership role, applying practical process knowledge, team coordination and continuous-improvement thinking.</p>
 <div class="stats rv">
 <div class="stat"><b>8+</b><span>years in food, FMCG and pharmaceutical manufacturing</span></div>
 <div class="stat"><b>6</b><span>years in biscuit production and packaging</span></div>
 <div class="stat"><b>3</b><span>chocolate varieties taken from trial to commercial production</span></div>
-</div></section>
+<div class="stat"><b>31–50</b><span>employees supervised per shift</span></div>
+</div></div></section>
 
 <section id="experience"><div class="wrap">
-<h2 class="rv">Experience</h2>
+<h2 class="rv"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 43V23l10 6v-6l10 6v-6l10 6V11h6v32z"/><path class="t" d="M10 35h4v4h-4zM20 35h4v4h-4zM30 35h4v4h-4z"/><circle class="pf" cx="39" cy="7" r="3"/><circle class="pf pf2" cx="39" cy="7" r="3"/></svg>Experience</h2>
 <ol class="tl">
 <li class="rv">
 <div class="when">Aug 2025 – Present</div>
 <h3>Production Supervisor</h3>
 <div class="co">Katrina Factory FZE, Dubai, UAE (chocolate / FMCG)</div>
 <ul>
-<li>Supervise daily production and packaging, allocating manpower for safe, uninterrupted line performance.</li>
-<li>Track hourly output, downtime and productivity, and act to keep line efficiency high.</li>
-<li>Coordinate line setup, start-up, changeovers, cleaning and pre-production checks under SOP, GMP, food safety and HSE rules.</li>
-<li>Troubleshoot first-level faults on kitchen, Conbar and Krokant lines, and escalate deviations to the right teams.</li>
-<li>Keep production records and shift documentation accurate and on time.</li>
+<li>Coordinate daily production planning, shift targets and execution, allocating manpower across a team of about 31–50 employees.</li>
+<li>Monitor hourly output, line performance and downtime, and follow up on results against targets.</li>
+<li>Coordinate breakdown response with the technical team and troubleshoot first-level faults on kitchen, Conbar and Krokant lines.</li>
+<li>Run line setup, start-up, changeovers, cleaning and pre-production checks under SOP, GMP, food safety and HSE rules.</li>
+<li>Monitor scrap, rework and material usage, and keep shift handover, reports and records accurate.</li>
+<li>Coordinate with QA, Maintenance and Warehouse teams to keep production flowing.</li>
 </ul>
 </li>
 <li class="rv">
@@ -176,7 +207,7 @@ html.js .rv.in{opacity:1;transform:none}
 <h3>Production, Biscuit Manufacturing</h3>
 <div class="co">ITC ICML Ltd, Viralimalai, Tamil Nadu, India</div>
 <ul>
-<li>About 6 years across production, process operation, mixing, raw material handling and packaging.</li>
+<li>About 6 years across mixing, maida handling, raw material handling, process troubleshooting and packing.</li>
 <li>Supported packaging operations and machine troubleshooting while meeting quality and food safety requirements.</li>
 <li>Worked with teams to reach output targets and improve line performance.</li>
 </ul>
@@ -184,32 +215,68 @@ html.js .rv.in{opacity:1;transform:none}
 </ol>
 </div></section>
 
+<section id="leadership"><div class="wrap">
+<h2 class="rv"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><g class="bob2"><circle cx="9" cy="21" r="4"/><path d="M2 38c0-5 3-8 7-8"/></g><g class="bob3"><circle cx="39" cy="21" r="4"/><path d="M46 38c0-5-3-8-7-8"/></g><g class="bob"><circle class="t" cx="24" cy="15" r="6"/><path d="M13 42c0-8 4-13 11-13s11 5 11 13z"/></g></svg>Leadership</h2>
+<div class="skills">
+<div class="sg rv"><h3>Shift execution</h3><p>Daily production planning, target setting, shift coordination and completion follow-up.</p></div>
+<div class="sg rv"><h3>People management</h3><p>Manpower allocation, task assignment and supervision of about 31–50 employees per shift.</p></div>
+<div class="sg rv"><h3>Performance tracking</h3><p>Hourly output monitoring, shift reporting, handover and production records.</p></div>
+<div class="sg rv"><h3>Cross-functional coordination</h3><p>Working with QA, Maintenance and Warehouse teams to support production flow.</p></div>
+</div></div></section>
+
 <section id="skills"><div class="wrap">
-<h2 class="rv">Skills</h2>
+<h2 class="rv"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><g class="sp" style="transform-origin:17px 28px"><circle cx="17" cy="28" r="11.5" stroke-width="5" stroke-dasharray="4.5 4.2" stroke-linecap="butt"/><circle class="t" cx="17" cy="28" r="9"/><circle cx="17" cy="28" r="3"/></g><g class="sp2" style="transform-origin:34px 14px"><circle cx="34" cy="14" r="7.5" stroke-width="4.5" stroke-dasharray="3.7 3.4" stroke-linecap="butt"/><circle class="t" cx="34" cy="14" r="5.5"/><circle cx="34" cy="14" r="2"/></g></svg>Skills</h2>
 <div class="skills">
 <div class="sg rv"><h3>Production management</h3><div class="chips"><span>Production planning</span><span>Scheduling</span><span>Daily supervision</span><span>Manpower planning</span><span>Work allocation</span><span>Shift handover</span><span>Output monitoring</span><span>Target achievement</span></div></div>
-<div class="sg rv"><h3>Quality and compliance</h3><div class="chips"><span>GMP / cGMP</span><span>Food safety</span><span>Hygiene</span><span>SOP compliance</span><span>Line clearance</span><span>Batch documentation</span><span>Material reconciliation</span><span>Deviation reporting</span><span>CAPA</span></div></div>
+<div class="sg rv"><h3>Quality and compliance</h3><div class="chips"><span>GMP / cGMP</span><span>Food safety</span><span>Hygiene</span><span>SOP compliance</span><span>Line clearance</span><span>Batch documentation</span><span>Material reconciliation</span><span>Deviation reporting</span><span>CAPA</span><span>HACCP</span><span>Scrap and rework monitoring</span></div></div>
 <div class="sg rv"><h3>Efficiency and improvement</h3><div class="chips"><span>OEE</span><span>Line efficiency</span><span>Downtime reduction</span><span>Root cause analysis</span><span>5 Why</span><span>Continuous improvement</span><span>Waste reduction</span></div></div>
-<div class="sg rv"><h3>Technical and equipment</h3><div class="chips"><span>Packaging machine troubleshooting</span><span>Line setup and start-up</span><span>Changeover</span><span>Preventive maintenance coordination</span><span>Commissioning support</span><span>IQ / OQ / PQ</span><span>Bi-Fold</span><span>Flexi printing</span><span>Thermoforming</span></div></div>
+<div class="sg rv"><h3>Technical and equipment</h3><div class="chips"><span>Packaging machine troubleshooting</span><span>Line setup and start-up</span><span>Changeover</span><span>Preventive maintenance coordination</span><span>Commissioning support</span><span>IQ / OQ / PQ</span><span>Bi-Fold</span><span>Flexi printing</span><span>Thermoforming</span><span>Conbar and Krokant troubleshooting</span><span>Chocolate manufacturing</span><span>Biscuit manufacturing</span></div></div>
 <div class="sg rv"><h3>Leadership and safety</h3><div class="chips"><span>Team leadership</span><span>Team coordination</span><span>Cross-functional communication</span><span>HSE</span><span>Workplace safety</span><span>Problem solving</span></div></div>
 </div></div></section>
 
+<section id="projects"><div class="wrap">
+<h2 class="rv"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path class="t glow" stroke="none" d="M24 6a12 12 0 0 0-6 22.4V33h12v-4.6A12 12 0 0 0 24 6z"/><path d="M24 6a12 12 0 0 0-6 22.4V33h12v-4.6A12 12 0 0 0 24 6zM19 38h10M21 43h6"/><path class="glow" d="M6 10 3 7M42 10l3-3M24 2V-1"/></svg>Projects and contributions</h2>
+<ul class="pl">
+<li class="rv"><span class="st">Completed</span><h3>Production capacity improvement</h3><p>Process improvement and line optimization raised shift capacity from 24 MT to 28 MT, a gain of 4 MT per shift (about 16.7%).</p></li>
+<li class="rv"><span class="st">Successful trial</span><h3>CIP cleaning time reduction</h3><p>Trial cleaning time dropped from 4 hours to 2 hours (50%). Routine use depends on approved cleaning and food-safety procedures.</p></li>
+<li class="rv"><span class="st">Production contribution</span><h3>Chocolate product development</h3><p>Supported three chocolate varieties from trial to commercial production, covering process parameters, machine settings, manpower coordination, troubleshooting and product quality.</p></li>
+<li class="rv"><span class="st run">Ongoing</span><h3>Conbar and Krokant line troubleshooting</h3><p>Machine operation, process fault identification, corrective action and coordination with the technical team.</p></li>
+<li class="rv"><span class="st run">Ongoing</span><h3>Scrap and waste monitoring</h3><p>Tracks primary and secondary laminate scrap, rework, metal detector rejects, output and material reconciliation.</p></li>
+<li class="rv"><span class="st plan">Proposed concept, not implemented</span><h3>Kitchen process automation</h3><p>After two milk-mix batches, caramel preparation starts automatically. After six caramel batches, the product moves to the drain line and load-cell feedback drains 30 kg, then the cycle repeats. Needs engineering review, PLC/HMI development, interlocks, calibration, trials and food-safety approval.</p></li>
+</ul>
+</div></section>
+
+<section id="achievements"><div class="wrap">
+<h2 class="rv"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path class="t" d="M15 8h18v12a9 9 0 0 1-18 0z"/><path d="M15 12H9c0 6 3 9 7 9M33 12h6c0 6-3 9-7 9M24 29v8M19 37h10M16 43h16"/><path class="tw" d="M41 2v8M37 6h8"/><path class="tw tw2" d="M7 4v6M4 7h6"/></svg>Achievements</h2>
+<ul class="ach rv">
+<li>Raised shift capacity from 24 MT to 28 MT.</li>
+<li>Cut CIP cleaning time from 4 hours to 2 hours in a successful trial.</li>
+<li>Supported three chocolate varieties from trials to commercial production.</li>
+<li>Received appreciation from management for contribution and performance in manufacturing operations.</li>
+</ul>
+</div></section>
+
 <section id="credentials"><div class="wrap">
-<h2 class="rv">Credentials</h2>
+<h2 class="rv"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="7" width="38" height="27" rx="3"/><path d="M12 15h24M12 21h14"/><circle class="t" cx="34" cy="32" r="6"/><path d="M31 44l-1-7M37 44l1-7"/><path class="dr" d="M31 32l2.5 2.5L38 29"/></svg>Education and certifications</h2>
 <div class="cred rv">
-<div><h3>Certifications</h3><p>HACCP <small>October 2026</small></p><p>GMP <small>October 2026</small></p></div>
-<div><h3>Education</h3><p>ITI Fitter, 86.4%<br><small>Government Industrial Training Institute, Andimadam. 2014 – 2016</small></p></div>
+<div><h3>Certifications</h3>
+<p>Good Manufacturing Practices (GMP)<br><small>Alison, completed 18 October 2026<br>Certificate ID 7400-56004138</small><br><a href="https://alison.com/verify/b32a7b79e7">Verify certificate</a></p>
+<p>HACCP<br><small>Alison, completed 9 October 2026<br>Certificate ID 5690-56004138</small><br><a href="https://alison.com/verify/fb64f48679">Verify certificate</a></p></div>
+<div><h3>Education</h3><p>ITI Fitter, 86.4%<br><small>Government Industrial Training Institute, Andimadam, India. 2014 – 2016</small></p></div>
 <div><h3>Languages</h3><p>English <small>working proficiency</small></p><p>Tamil <small>native</small></p></div>
-</div></div></section>
+</div>
+<p class="fine rv">Alison certificates are course-completion certificates, not professional licences or accredited diplomas.</p>
+</div></section>
 </main>
 
 <section class="contact" id="contact"><div class="wrap">
-<h2>Let’s talk</h2>
+<h2><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect class="ltr t" x="14" y="6" width="20" height="20" rx="2"/><rect x="6" y="18" width="36" height="24" rx="3" fill="var(--ink)"/><path d="M6 21l18 13 18-13"/></svg>Let’s talk</h2>
 <p>Open to Production Supervisor roles. Based in Dubai, UAE, with a 30-day notice period.</p>
 <a class="mail" href="mailto:anbudxb2025@gmail.com">anbudxb2025@gmail.com</a>
 <div class="cl">
 <a class="btn main" href="https://wa.me/971562521842">Message on WhatsApp</a>
 <a class="btn" href="tel:+971562521842">Call +971 56 252 1842</a>
+<a class="btn" href="https://www.linkedin.com/in/anbuselvan-anbalagan-50b444226/">LinkedIn</a>
 </div>
 <footer>© 2026 Anbuselvan Anbalagan</footer>
 </div></section>
